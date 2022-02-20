@@ -71,7 +71,6 @@ aside {
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
   height: 100%;
   > h2 {
     margin-bottom: 4px;
@@ -80,6 +79,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 500px) {
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding-top: 70px;
   }
 }
 main {
