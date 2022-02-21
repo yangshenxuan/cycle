@@ -1,30 +1,56 @@
 <template>
-  <div class="yui-dialog-overlay"></div>
-  <div class="yui-dialog-wrapper">
-    <div class="yui-dialog">
-      <header>
-        标题
-        <span class="yui-dialog-close"></span>
-      </header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <footer>
-        <Button level="main" class="left">OK</Button>
-        <Button>Cancel</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="yui-dialog-overlay" @click="closeOnClickOverlay"></div>
+    <div class="yui-dialog-wrapper">
+      <div class="yui-dialog">
+        <header>
+          标题
+          <span class="yui-dialog-close" @click="close"></span>
+        </header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <Button level="main" class="left" @click="ok">OK</Button>
+          <Button @click="cancel">Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 <script lang="ts">
 import Button from "../lib/Button.vue";
-import { defineComponent } from "vue";
 
-export default defineComponent({
+export default {
   components: { Button },
-  setup() {},
-});
+  props: {
+    visible: { type: Boolean, default: false },
+    closeOnClickOverlay: { type: Boolean, default: false },
+    ok: Function,
+    cancel: Function,
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const closeOnClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      if (props.ok && props.ok() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      context.emit("cancel");
+      close();
+    };
+    return { close, closeOnClickOverlay, ok, cancel };
+  },
+};
 </script>
 <style lang="scss">
 $radius: 4px;
