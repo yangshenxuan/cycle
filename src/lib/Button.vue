@@ -52,7 +52,7 @@ $blue: #0075a8;
 $red: red;
 .yui-button {
   box-sizing: border-box;
-  width: 70px;
+  min-width: 70px;
   height: 27px;
   border: 1px solid white;
   background: #626262;
