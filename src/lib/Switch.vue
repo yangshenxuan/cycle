@@ -3,44 +3,44 @@
     <span></span>
   </button>
 </template>
-
-<script lang='ts'>
+<script lang="ts">
 import { ref } from "vue";
 export default {
+  props: {
+    value: Boolean,
+  },
   setup() {
     const checked = ref(false);
     const toggle = () => {
       checked.value = !checked.value;
-      console.log(checked.value);
     };
     return { checked, toggle };
   },
 };
 </script>
 
-<style lang="scss">
-$h: 22px;
-$h2: $h - 4px;
+<style lang="scss" scoped>
 button {
-  height: $h;
-  width: $h * 2;
+  height: 22px;
+  width: 22px * 2;
   border: none;
-  border-radius: $h/2;
   background: #bfbfbf;
+  border-radius: 11px;
   position: relative;
-  span {
+  > span {
     position: absolute;
-    height: $h2;
-    width: $h2;
-    background: white;
     top: 2px;
     left: 2px;
-    border-radius: $h2/2;
+    height: 18px;
+    width: 18px;
+    background: white;
+    border-radius: 9px;
+    transition: all 250ms;
   }
   &.checked {
     background: #1890ff;
     > span {
-      left: calc(100% - #{$h2} - 2px);
+      left: calc(100% - 18px - 2px);
     }
   }
 }
