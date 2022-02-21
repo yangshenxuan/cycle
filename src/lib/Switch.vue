@@ -1,5 +1,6 @@
 <template>
-  <button @click="toggle" :class="{ checked }">
+  <button @click="toggle" :class="{ checked }" class="">
+    <slot />
     <span></span>
   </button>
 </template>
@@ -21,26 +22,26 @@ export default {
 
 <style lang="scss" scoped>
 button {
-  height: 22px;
-  width: 22px * 2;
+  height: 27px;
+  width: 82px;
   border: none;
   background: #bfbfbf;
-  border-radius: 11px;
   position: relative;
+  box-shadow: inset 0px 1px 3px rgb(71, 71, 71);
   > span {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    height: 18px;
-    width: 18px;
+    top: 3px;
+    left: 4px;
+    height: 21px;
+    width: 34px;
     background: white;
-    border-radius: 9px;
+    box-shadow: 0px 1px 4px rgb(71, 71, 71);
     transition: all 250ms;
   }
   &.checked {
     background: #1890ff;
     > span {
-      left: calc(100% - 18px - 2px);
+      left: calc(100% - 36px - 2px);
     }
   }
 }

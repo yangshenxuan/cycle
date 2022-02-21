@@ -1,6 +1,6 @@
 <template>
   <div>2组件</div>
-  <Button />
+  <Button @click="onClick">你好</Button>
 </template>
 
 <script lang="ts">
@@ -9,6 +9,11 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   components: { Button },
-  setup() {},
+  setup() {
+    const onClick = () => {
+      console.log(123);
+    };
+    return { onClick };
+  },
 });
 </script>

@@ -1,3 +1,5 @@
 <template>
-  <button>你好</button>
+  <button>
+    <slot />
+  </button>
 </template>
