@@ -1,5 +1,9 @@
 <template>
-  <button @click="toggle" :class="{ checked }" class="">
+  <button
+    @click="toggle"
+    :class="{ 'yui-checked': checked }"
+    class="yui-switch"
+  >
     <slot />
     <span></span>
   </button>
@@ -20,29 +24,32 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-button {
-  height: 27px;
-  width: 82px;
+<style lang="scss" >
+.yui-switch {
+  height: 20px;
+  width: 70px;
   border: none;
   background: #bfbfbf;
   position: relative;
-  box-shadow: inset 0px 1px 3px rgb(71, 71, 71);
+  box-shadow: inset 0px 3px 5px rgb(59, 59, 59);
   > span {
     position: absolute;
     top: 3px;
     left: 4px;
-    height: 21px;
-    width: 34px;
+    height: 14px;
+    width: 30px;
     background: white;
-    box-shadow: 0px 1px 4px rgb(71, 71, 71);
+    box-shadow: 0px 1px 3px rgb(71, 71, 71);
     transition: all 250ms;
   }
-  &.checked {
-    background: #1890ff;
+  &.yui-checked {
+    background: #0075a8;
     > span {
-      left: calc(100% - 36px - 2px);
+      left: calc(100% - 30px - 4px);
     }
+  }
+  &:focus {
+    outline: none;
   }
 }
 </style>
