@@ -4,16 +4,15 @@
     <div class="yui-dialog-wrapper">
       <div class="yui-dialog">
         <header>
-          标题
+          <slot name="title" />
           <span class="yui-dialog-close" @click="close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content" />
         </main>
         <footer>
-          <Button level="main" class="left" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
+          <Button @click="cancel" class="left">Cancel</Button>
+          <Button level="main" @click="ok">OK</Button>
         </footer>
       </div>
     </div>
