@@ -52,8 +52,8 @@ $blue: #0075a8;
 $red: red;
 .yui-button {
   box-sizing: border-box;
-  min-width: 70px;
-  height: 27px;
+  min-width: 80px;
+  height: 30px;
   border: 1px solid white;
   background: #626262;
   color: black;
@@ -61,6 +61,7 @@ $red: red;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+  border-radius: 4px;
   &:hover,
   &:focus {
     color: darken(white, 2%);

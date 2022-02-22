@@ -4,7 +4,7 @@
       <Topnav />
       <div class="banner">
         <h1>Y-UI</h1>
-        <h2>属于YOUNG的UI框架</h2>
+        <h2>不一YOUNG的UI框架</h2>
         <p class="actions">
           <router-link to="/doc" class="start">开始</router-link>
           <a href="https://github.com/yangshenxuan" class="github">
@@ -91,7 +91,7 @@ export default {
       }
     }
     .start {
-      margin: 0 8px 0 80px;
+      margin: 0 8px 0 75px;
       color: #2f2822;
       border: 1px solid #2f2822;
       display: inline-block;
