@@ -3,14 +3,12 @@
     <h1>Switch 组件示例</h1>
     <div class="demo">
       <h2>常规用法</h2>
-      <div class="demo-component">
-        <Switch />
-      </div>
+      <div class="demo-component"></div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+        <pre>&lt;Switch v-model:value="bool" /</pre>
       </div>
     </div>
     <div class="demo">
@@ -28,11 +26,12 @@
   </div>
 </template>
 <script lang="ts">
-import Switch from "../lib/Switch/Switch.vue";
+import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
-import TextSwitch from "../lib/Switch/TextSwitch.vue";
+import TextSwitch from "../lib/TextSwitch.vue";
 export default {
   components: { Switch, TextSwitch, Button },
+  setup() {},
 };
 </script>
 <style lang="scss" scoped>

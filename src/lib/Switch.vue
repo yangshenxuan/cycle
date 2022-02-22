@@ -11,9 +11,6 @@
 <script lang="ts">
 import { ref } from "vue";
 export default {
-  props: {
-    value: Boolean,
-  },
   setup() {
     const checked = ref(false);
     const toggle = () => {

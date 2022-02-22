@@ -58,6 +58,11 @@ export default {
   height: 100vh;
   > .nav {
     flex-shrink: 0;
+    @media (max-width: 500px) {
+      background: rgb(221, 221, 221);
+      height: 60px;
+      box-shadow: 0px 2px 3px rgb(168, 168, 168);
+    }
   }
   > .content {
     flex-grow: 1;
