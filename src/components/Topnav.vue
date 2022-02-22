@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <img src="https://futuremadestudio.com/img/logo5.png" alt="" />
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -23,7 +23,6 @@ export default {
 
 <style lang="scss" >
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -31,12 +30,10 @@ export default {
   left: 0;
   width: 100%;
   z-index: 10;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 1px 2px rgb(158, 158, 158);
-  > .logo {
-    max-width: 6em;
-    margin-right: auto;
+  > img {
+    max-width: 50px;
   }
   > .menu {
     display: flex;
@@ -59,7 +56,7 @@ export default {
     > .menu {
       display: none;
     }
-    > .logo {
+    > img {
       margin: 0 auto;
     }
     > .toggleAside {
