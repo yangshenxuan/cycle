@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="yui-dialog-overlay" @click="closeOnClickOverlay"></div>
-    <div class="yui-dialog-wrapper">
-      <div class="yui-dialog">
-        <header>
-          <slot name="title" />
-          <span class="yui-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button @click="cancel" class="left">Cancel</Button>
-          <Button level="main" @click="ok">OK</Button>
-        </footer>
-      </div>
-    </div>
+    <teleport to="body"
+      ><div class="yui-dialog-overlay" @click="closeOnClickOverlay"></div>
+      <div class="yui-dialog-wrapper">
+        <div class="yui-dialog">
+          <header>
+            <slot name="title" />
+            <span class="yui-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button @click="cancel" class="left">Cancel</Button>
+            <Button level="main" @click="ok">OK</Button>
+          </footer>
+        </div>
+      </div></teleport
+    >
   </template>
 </template>
 <script lang="ts">
