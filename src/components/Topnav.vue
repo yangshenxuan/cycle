@@ -1,16 +1,28 @@
 <template>
   <div class="topnav">
-    <img src="https://futuremadestudio.com/img/logo5.png" alt="" />
+    <router-link to="/" class="fm">
+      <img src="https://futuremadestudio.com/img/logo5.png" alt=""
+    /></router-link>
+
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li><router-link to="/doc">文档</router-link></li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <span v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu"
+      ><svg>
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </span>
   </div>
 </template>
 <script lang="ts">
 import { inject, Ref } from "vue";
 export default {
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     const toggleMenu = () => {
@@ -22,6 +34,11 @@ export default {
 </script>
 
 <style lang="scss" >
+img {
+  max-width: 50px;
+  transform: rotate(120deg);
+}
+
 .topnav {
   display: flex;
   padding: 16px;
@@ -32,9 +49,6 @@ export default {
   z-index: 10;
   justify-content: space-between;
   align-items: center;
-  > img {
-    max-width: 50px;
-  }
   > .menu {
     display: flex;
     white-space: nowrap;
@@ -45,22 +59,25 @@ export default {
   }
   > .toggleAside {
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    background: #000;
     position: absolute;
     left: 16px;
+    top: 20px;
+    > svg {
+      width: 30px;
+      height: 30px;
+    }
     display: none;
   }
   @media (max-width: 500px) {
     > .menu {
       display: none;
     }
-    > img {
-      margin: 0 auto;
-    }
     > .toggleAside {
       display: inline-block;
+    }
+    > .fm {
+      margin: 0 auto;
+      transform: scale(70%);
     }
   }
 }

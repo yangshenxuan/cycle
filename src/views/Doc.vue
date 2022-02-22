@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav class="nav" />
+    <Topnav toggleMenuButtonVisible="true" class="nav" />
     <div class="content">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
@@ -74,6 +74,7 @@ aside {
   left: 0;
   height: 100%;
   padding-top: 70px;
+
   > h2 {
     margin-bottom: 4px;
   }
