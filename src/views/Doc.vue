@@ -75,6 +75,9 @@ export default {
 }
 .content {
   display: flex;
+  @media (min-width: 500px) {
+    margin-left: 100px;
+  }
   > aside {
     flex-shrink: 0;
   }
@@ -103,6 +106,9 @@ aside {
   padding-top: 70px;
   box-shadow: 2px 1px 3px rgb(185, 185, 185);
   font-weight: 300;
+  @media (min-width: 500px) {
+    width: 222px;
+  }
   > h2 {
     margin-bottom: 4px;
     padding: 0 4px;

@@ -20,7 +20,6 @@
         </div>
       </Switch>
     </div>
-    <div class="describe">文字和图标</div>
   </div>
 </template>
 
@@ -56,11 +55,6 @@ export default {
         font-size: 10px;
       }
     }
-    padding: 32px 18px;
-  }
-  > .describe {
-    padding: 18px;
-    font-size: 10px;
   }
 }
 </style>
