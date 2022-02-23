@@ -33,6 +33,11 @@ import Button from "../lib/Button.vue";
 import TextSwitch from "../lib/TextSwitch.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
+console.log("Switch1Demo:");
+console.log(Switch1Demo);
+console.log("Switch1Demo.__demo:");
+console.log(Switch1Demo.__demo);
+
 export default {
   components: { Switch, TextSwitch, Button, Switch1Demo, Switch2Demo },
   setup() {},
