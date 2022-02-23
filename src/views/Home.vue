@@ -99,15 +99,21 @@ export default {
       border-radius: 20px;
     }
   }
+  @media (min-width: 800px) {
+    padding: 200px;
+    transform: scale(150%);
+  }
 }
 .features {
   margin: 64px auto;
   width: 400px;
   @media (min-width: 800px) {
     width: 800px;
+    margin-top: 200px;
   }
   @media (min-width: 1200px) {
     width: 1200px;
+    margin-top: 300px;
   }
   > ul {
     display: flex;

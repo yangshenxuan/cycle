@@ -3,7 +3,9 @@
     <h1>Switch 组件示例</h1>
     <div class="demo">
       <h2>常规用法</h2>
-      <div class="demo-component"></div>
+      <div class="demo-component">
+        <Switch1Demo />
+      </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
@@ -14,7 +16,7 @@
     <div class="demo">
       <h2>支持 disabled</h2>
       <div class="demo-component">
-        <Switch class="disabled" disabled />
+        <Switch2Demo />
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -29,8 +31,10 @@
 import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
 import TextSwitch from "../lib/TextSwitch.vue";
+import Switch1Demo from "./Switch1.demo.vue";
+import Switch2Demo from "./Switch2.demo.vue";
 export default {
-  components: { Switch, TextSwitch, Button },
+  components: { Switch, TextSwitch, Button, Switch1Demo, Switch2Demo },
   setup() {},
 };
 </script>
