@@ -1,24 +1,32 @@
 <template>
-  <div>
-    <h1>Switch 组件示例</h1>
-    <Demo :component="Switch1Demo" />
-    <Demo :component="Switch2Demo" />
+  <div class="demo">
+    <h2>{{ component.__sourceCodeTitle }}</h2>
+    <div class="demo-component">
+      <component :is="component"></component>
+    </div>
+    <div class="demo-actions">
+      <Button @click="codeVisible = !codeVisible">查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
+      <pre>{{ component.__sourceCode }}</pre>
+    </div>
   </div>
 </template>
-<script lang="ts">
-import Switch1Demo from "./Switch1.demo.vue";
-import Switch2Demo from "./Switch2.demo.vue";
-import Demo from "./Demo.vue";
+
+<script lang='ts'>
 import { ref } from "vue";
+import Button from "../lib/Button.vue";
 
 export default {
-  components: { Switch1Demo, Switch2Demo, Demo },
   props: {
     component: Object,
   },
+  components: {
+    Button,
+  },
   setup() {
     const codeVisible = ref(false);
-    return { Switch1Demo, Switch2Demo };
+    return { codeVisible };
   },
 };
 </script>
