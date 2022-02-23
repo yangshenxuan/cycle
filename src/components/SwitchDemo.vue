@@ -10,7 +10,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /</pre>
+        <pre>{{ Switch1Demo.__sourceCode }}</pre>
       </div>
     </div>
     <div class="demo">
@@ -22,7 +22,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" &#10;disabled /&gt;</pre>
+        <pre>{{ Switch2Demo.__sourceCode }}</pre>
       </div>
     </div>
   </div>
@@ -33,14 +33,12 @@ import Button from "../lib/Button.vue";
 import TextSwitch from "../lib/TextSwitch.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
-console.log("Switch1Demo:");
-console.log(Switch1Demo);
-console.log("Switch1Demo.__demo:");
-console.log(Switch1Demo.__demo);
 
 export default {
   components: { Switch, TextSwitch, Button, Switch1Demo, Switch2Demo },
-  setup() {},
+  setup() {
+    return { Switch1Demo, Switch2Demo };
+  },
 };
 </script>
 <style lang="scss" scoped>
