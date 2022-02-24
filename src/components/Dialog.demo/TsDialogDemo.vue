@@ -1,4 +1,4 @@
-<demo>使用TypeScript打开Dialog</demo>
+<demo>使用TypeScript一键打开Dialog</demo>
 <template>
   <Button @click="showDialog">显示2</Button>
 </template>

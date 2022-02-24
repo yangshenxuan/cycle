@@ -2,8 +2,6 @@
   <h1>Dialog组件示例</h1>
   <Demo :component="NormalDialogDemo" />
   <Demo :component="TsDialogDemo" />
-
-  <h1>示例2</h1>
 </template>
 <script lang="ts">
 import Demo from "./Demo.vue";
